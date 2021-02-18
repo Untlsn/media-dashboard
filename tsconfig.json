@@ -18,9 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src"
-  ]
+    "jsx": "react",
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@Components/*": ["components/*"],
+      "@Libs/*": ["libs/*"],
+    }
+  }
 }
