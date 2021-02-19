@@ -15,6 +15,10 @@ const StyledSwitch = styled.div<SwitchStyleProps>`
   width: 1em;
 
   position: relative;
+  
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const orbSize = 45
