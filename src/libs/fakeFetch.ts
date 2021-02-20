@@ -32,7 +32,7 @@ const fakeApi: ApiInterface = {
         "followers": 1987,
         "increments": 12,
         "icon": "icon-facebook",
-        "bar_color": ["#1ca0f2"],
+        "bar_color": ["#188ff4"],
         "people_name":"followers"
       },
       {
@@ -40,7 +40,7 @@ const fakeApi: ApiInterface = {
         "followers": 1044,
         "increments": 99,
         "icon": "icon-twitter",
-        "bar_color": ["#00bfff"],
+        "bar_color": ["#1da2f0"],
         "people_name": "followers"
       },
       {
@@ -48,7 +48,7 @@ const fakeApi: ApiInterface = {
         "followers": 11000,
         "increments": 1099,
         "icon": "icon-instagram",
-        "bar_color": ["#dcaa5f", "#bb5087"],
+        "bar_color": ["#fdbe68", "#e04e93"],
         "people_name": "followers"
       },
       {
@@ -56,7 +56,7 @@ const fakeApi: ApiInterface = {
         "followers": 8239,
         "increments": -144,
         "icon": "icon-youtobe",
-        "bar_color": ["#9b1030"],
+        "bar_color": ["#c4032b"],
         "people_name": "subscribers"
       }
     ],
