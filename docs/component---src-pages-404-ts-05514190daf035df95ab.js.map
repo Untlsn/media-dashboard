@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.ts"],"names":["Index"],"mappings":"6FAAA,uBACeA,YAAf","file":"component---src-pages-404-ts-05514190daf035df95ab.js","sourcesContent":["import Index from './index'\r\nexport default Index\r\n"],"sourceRoot":""}
