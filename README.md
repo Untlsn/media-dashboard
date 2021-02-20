@@ -3,14 +3,13 @@ WORKFLOW
 #### My version of project from [this](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
 
 ## Last update:
-  - Full create Total of Side
-  - Add Graphql
-
-### Next main task: 
   - Create DayOverview
 
-### Future tasks:
+### Next main task: 
   - Make it full responsive
+
+### Future tasks:
+  - ???
 
 ### Concepts:
   - Add horizontal scrolling in mobile
