@@ -55,7 +55,7 @@ const fakeApi: ApiInterface = {
         "username": "Nathan F.",
         "followers": 8239,
         "increments": -144,
-        "icon": "icon-youtobe",
+        "icon": "icon-youtube",
         "bar_color": ["#c4032b"],
         "people_name": "subscribers"
       }
@@ -100,13 +100,13 @@ const fakeApi: ApiInterface = {
       {
         "name": "Likes",
         "count": 107,
-        "icon": "icon-youtobe",
+        "icon": "icon-youtube",
         "percent_increments": -19
       },
       {
         "name": "Total views",
         "count": 1407,
-        "icon": "icon-youtobe",
+        "icon": "icon-youtube",
         "percent_increments": -12
       }
     ]

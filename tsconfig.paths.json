@@ -5,7 +5,8 @@
       "~/*": ["./src/*"],
       "@Libs/*": ["./src/libs/*"],
       "@Components/*": ["./src/components/*"],
-      "@Style/*": ["./src/style/*"]
+      "@Style/*": ["./src/style/*"],
+      "@Interfaces/*": ["./src/interfaces/*"]
     }
   }
 }

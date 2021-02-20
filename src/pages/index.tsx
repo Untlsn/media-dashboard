@@ -4,6 +4,7 @@ import { lightTheme, darkTheme, GlobalStyles } from "@Style/Global";
 import Navigation from "@Components/Navigation";
 import {fakeFetch, ApiInterface} from "@Libs/fakeFetch";
 import TotalOfSide from "@Components/TotalOfSide";
+import { getFromGraphQL } from '@Libs/Images'
 
 const Index = () => {
   const [fetchData, setFetchData] = useState<ApiInterface>({
@@ -18,11 +19,12 @@ const Index = () => {
   })
   const [darkMode, setDarkMode] = useState(false)
 
+  const imgSrc = getFromGraphQL()
+
   useEffect(() => {
     setDarkMode(localStorage.getItem('theme') == 'dark')
     fakeFetch().then(setFetchData)
   })
-
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -32,7 +34,10 @@ const Index = () => {
         sideName={fetchData.side_metadata.title}
         isDarkMode={darkMode}
         darkModeController={setDarkMode}/>
-      <TotalOfSide tileData={fetchData.socials.full}/>
+      <TotalOfSide tileData={fetchData.socials.full.map(data => ({
+        ...data,
+        icon: imgSrc[data.icon]
+      }))}/>
     </ThemeProvider>
   );
 }

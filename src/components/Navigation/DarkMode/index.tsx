@@ -7,7 +7,6 @@ import Bgc from "@Libs/BackgroundCreator";
 const DarkMode = (props: DarkModeProps) => {
   const isDarkMode = props.isDarkMode ?? false
   const { darkModeController } = props
-  console.log(`in dark ->${isDarkMode}`)
   return (
     <Wrapper>
       <Text>{ isDarkMode ? 'Dark' : 'Light' } Mode</Text>

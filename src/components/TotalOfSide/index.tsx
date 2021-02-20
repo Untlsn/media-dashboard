@@ -4,7 +4,6 @@ import TotalTile from './Tile'
 import {TotalOfSideProps} from "@Components/TotalOfSide/props";
 
 const TotalOfSide = ({ tileData }: TotalOfSideProps) => {
-
   return (
     <Wrapper>
       { tileData.map((props, key) => (

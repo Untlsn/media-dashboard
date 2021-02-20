@@ -7,6 +7,10 @@ interface ThemeSettings {
   tileColor: string
 }
 
+export interface ThemedProps {
+  theme: ThemeSettings
+}
+
 export
 const lightTheme: ThemeSettings = {
   background: '#fff',

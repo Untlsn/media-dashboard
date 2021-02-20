@@ -1,6 +1,7 @@
 import type { MouseEvent } from "react";
 import type Backgrounds from "./Background";
 import Speed from "@Libs/Speed";
+import { ThemedProps } from "@Style/Global";
 
 export default
 interface SwitchProps {
@@ -9,7 +10,7 @@ interface SwitchProps {
   onClick?: (event: MouseEvent<HTMLDivElement>, switchState: boolean) => any
 }
 
-interface SwitchStylesProps {
+interface SwitchStylesProps extends ThemedProps {
   background?: string,
   widthToHeight?: number
 }

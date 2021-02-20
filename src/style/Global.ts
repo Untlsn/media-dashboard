@@ -31,5 +31,5 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   }
 `
 
-export { darkTheme, lightTheme } from './theme'
+export { darkTheme, lightTheme, ThemedProps } from './theme'
 export { ThemedBackground, ThemedText, Tile } from './themedEl'
