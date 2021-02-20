@@ -9,11 +9,14 @@ const DarkMode = (props: DarkModeProps) => {
   const { darkModeController } = props
   return (
     <Wrapper>
-      <Text>{ isDarkMode ? 'Light' : 'Dark' } Mode</Text>
+      <Text>{ isDarkMode ? 'Dark' : 'Light' } Mode</Text>
       <Switch
         isOn={ isDarkMode }
         background={Background.dual('#aeb3cb', Bgc.dual('#00aeff', '#00995d').get())}
-        onClick={ (_, isOn) => darkModeController(isOn) }
+        onClick={ (_, isOn) => {
+          darkModeController(isOn)
+          localStorage.setItem('theme', isOn ? 'dark' : 'light')
+        } }
       />
     </Wrapper>
   )

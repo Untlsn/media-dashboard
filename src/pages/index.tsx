@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "@Style/Global";
 import Navigation from "@Components/Navigation";
 import {fakeFetch, ApiInterface} from "@Libs/fakeFetch";
 import TotalOfSide from "@Components/TotalOfSide";
 
-const App = () => {
-
+const Index = () => {
   const [fetchData, setFetchData] = useState<ApiInterface>({
     side_metadata: {
       title: ''
@@ -17,18 +16,12 @@ const App = () => {
       total: 0
     },
   })
+  const [darkMode, setDarkMode] = useState(false)
 
-
-
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem('theme') === 'dark'
-  )
-  window.addEventListener('beforeunload', () => {
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
+  useEffect(() => {
+    setDarkMode(localStorage.getItem('theme') == 'dark')
+    fakeFetch().then(setFetchData)
   })
-
-  fakeFetch().then(setFetchData)
-
 
 
   return (
@@ -44,4 +37,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Index;
