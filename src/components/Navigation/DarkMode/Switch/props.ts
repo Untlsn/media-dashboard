@@ -4,7 +4,7 @@ import Speed from "@Libs/Speed";
 
 export default
 interface SwitchProps {
-  isOn?: boolean,
+  isOn?: boolean
   background?: Backgrounds
   onClick?: (event: MouseEvent<HTMLDivElement>, switchState: boolean) => any
 }
