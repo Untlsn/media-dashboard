@@ -1,5 +1,4 @@
 import BackgroundCreator from "@Libs/BackgroundCreator";
-import {ThemedProps} from "@Style/theme";
 
 export interface TotalTileProps {
   username: string,
@@ -13,10 +12,3 @@ export interface StyledTileProps {
   barColor: BackgroundCreator
 }
 
-export interface LogoProps {
-  icon: string
-}
-
-export interface IncrementProps extends ThemedProps{
-  type: 'down'|'up'|'none'
-}

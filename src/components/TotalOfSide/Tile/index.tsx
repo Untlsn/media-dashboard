@@ -1,11 +1,9 @@
 import React from "react";
 import type { TotalTileProps } from "./props";
 import * as S from "./style";
+import {Increment, incrementType, Logo} from "@Style/components";
 import Bgc from "@Libs/BackgroundCreator";
-
-const incrementType = (increments: number) =>
-  increments < 0 ? 'down'
-    : increments > 0 ? 'up' : 'none'
+import numberCutter from "@Libs/numberCutter";
 
 
 const getBarColor = (bar_color: string[]) => {
@@ -18,12 +16,12 @@ const getBarColor = (bar_color: string[]) => {
 const TotalTile = ({ username, followers, increments, icon, bar_color, people_name }: TotalTileProps) => {
   return (
     <S.StyledTile barColor={ getBarColor(bar_color) }>
-      <S.ULWrapper><S.Logo icon={ icon } /><S.Username>{ username }</S.Username></S.ULWrapper>
+      <S.ULWrapper><Logo icon={ icon } /><S.Username>{ username }</S.Username></S.ULWrapper>
       <S.FPNWrapper>
-        <S.Followers>{ followers }</S.Followers>
+        <S.Followers>{ numberCutter(followers) }</S.Followers>
         <S.PeopleName>{ people_name }</S.PeopleName>
       </S.FPNWrapper>
-      <S.Increment type={ incrementType(increments) }>{ Math.abs(increments) }</S.Increment>
+      <Increment type={ incrementType(increments) }>{ Math.abs(increments) }</Increment>
     </S.StyledTile>
   )
 }

@@ -1,11 +1,5 @@
 import {TotalTileProps} from "@Components/TotalOfSide/Tile";
-
-interface SocialsToday {
-  name: string,
-  count: number,
-  icon: string
-  percent_increments: number
-}
+import {DayTileProps} from "@Components/DayOverview/DayTile";
 
 export
 interface ApiInterface {
@@ -15,7 +9,7 @@ interface ApiInterface {
   socials: {
     total: number
     full: TotalTileProps[],
-    today: SocialsToday[]
+    today: DayTileProps[]
   }
 }
 

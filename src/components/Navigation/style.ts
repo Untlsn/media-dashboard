@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   
-  margin: 5vh 10vw;
+  margin: 3vh 2vw;
 `
 export
 const Shadow = styled.div`

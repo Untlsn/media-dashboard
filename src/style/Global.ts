@@ -16,8 +16,9 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   body {
     background: ${props => props.theme.background};
     color: ${props => props.theme.textColor};
+    transition: background, color .5s;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 5vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

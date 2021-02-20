@@ -11,4 +11,8 @@ const ThemedBackground = styled.div`
 export
 const Tile = styled.div`
   background: ${props => props.theme.tileColor};
+  &:hover {
+    background: ${props => props.theme.secBackgroundHover};
+  }
+  transition: background .5s;
 `
