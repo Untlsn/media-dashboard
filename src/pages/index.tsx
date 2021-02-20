@@ -23,35 +23,38 @@ const Index = () => {
       total: 0
     },
   })
+  const [dataGet, setDataGet] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
   const imgSrc = getFromGraphQL()
 
   useEffect(() => {
     setDarkMode(localStorage.getItem('theme') == 'dark')
-    fakeFetch().then(setFetchData)
+    fakeFetch().then(setFetchData).then(() => setDataGet(true))
   })
 
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Wrapper>
-        <GlobalStyles />
-        <Navigation
-          totalFollowers={fetchData.socials.total}
-          sideName={fetchData.side_metadata.title}
-          isDarkMode={darkMode}
-          darkModeController={setDarkMode}/>
-        <TotalOfSide tileData={fetchData.socials.full.map(data => ({
-          ...data,
-          icon: imgSrc[data.icon]
-        }))}/>
-        <DayOverview dayTiles={fetchData.socials.today.map(data => ({
-          ...data,
-          icon: imgSrc[data.icon]
-        }))}/>
-      </Wrapper>
-    </ThemeProvider>
-  );
+  return dataGet
+    ? (
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+        <Wrapper>
+          <GlobalStyles />
+          <Navigation
+            totalFollowers={fetchData.socials.total}
+            sideName={fetchData.side_metadata.title}
+            isDarkMode={darkMode}
+            darkModeController={setDarkMode}/>
+          <TotalOfSide tileData={fetchData.socials.full.map(data => ({
+            ...data,
+            icon: imgSrc[data.icon]
+          }))}/>
+          <DayOverview dayTiles={fetchData.socials.today.map(data => ({
+            ...data,
+            icon: imgSrc[data.icon]
+          }))}/>
+        </Wrapper>
+      </ThemeProvider>
+    )
+    : <h1 style={{ textAlign: 'center' }}>Just wait data will come...</h1>
 }
 
 export default Index;
