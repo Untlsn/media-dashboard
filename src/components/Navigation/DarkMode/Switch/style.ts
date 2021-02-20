@@ -1,18 +1,15 @@
 import styled from "styled-components";
-import type {SwitchOrbProps, SwitchStyleProps} from "./props";
-
-const switchHeight = 50
+import type {StyledSwitchProps, SwitchOrbProps} from "./props";
 
 export
-const StyledSwitch = styled.div<SwitchStyleProps>`
-  font-size: ${props => (props.widthToHeight ?? 3) * 50}px;
+const StyledSwitch = styled.div<StyledSwitchProps>`
   
   background: ${props => props.background ?? '#aeb3cb'};
-  transform: scale(${props => props.scale ?? 1});
+  font-size: ${props => props.scale}em;
   
-  border-radius: ${switchHeight}px;
-  height: ${switchHeight}px;
-  width: 1em;
+  border-radius: 1em;
+  height: 1em;
+  width: 2em;
 
   position: relative;
   
@@ -21,26 +18,21 @@ const StyledSwitch = styled.div<SwitchStyleProps>`
   }
 `
 
-const orbSize = 45
-const gap = 10
-
 export
 const SwitchOrb = styled.div<SwitchOrbProps>`
-  background: ${props => props.background ?? '#fff'};
+  background: #fff;
   transform: translateX(${ 
-    props => props.isLeft ? `calc(-1em + ${gap*2 + orbSize}px)` : 0
+    props => props.isLeft ? `-.9em` : 0
   });
-  
-  
   
   transition: transform ${props => props.speed?.toString() ?? '1s'};
   
   border-radius: 100%;
-  height: ${orbSize}px;
-  width: ${orbSize}px;
+  height: .9em;
+  width: .9em;
 
   position: absolute;
-  right: ${gap}px;
+  right: .1em;
   
   top: 0;
   bottom: 0;

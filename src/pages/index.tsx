@@ -1,9 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {ThemeProvider} from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "@Style/Global";
 import { Navigation, TotalOfSide, DayOverview } from "@Components/all";
 import {fakeFetch, ApiInterface} from "@Libs/fakeFetch";
 import { getFromGraphQL } from '@Libs/Images'
+
+const Wrapper = styled.div`
+  margin: 0 50px;
+  @media(max-width: 1000px) {
+    margin: 0 2vw;
+  }
+`
 
 const Index = () => {
   const [fetchData, setFetchData] = useState<ApiInterface>({
@@ -27,20 +34,22 @@ const Index = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <GlobalStyles />
-      <Navigation
-        totalFollowers={fetchData.socials.total}
-        sideName={fetchData.side_metadata.title}
-        isDarkMode={darkMode}
-        darkModeController={setDarkMode}/>
-      <TotalOfSide tileData={fetchData.socials.full.map(data => ({
-        ...data,
-        icon: imgSrc[data.icon]
-      }))}/>
-      <DayOverview dayTiles={fetchData.socials.today.map(data => ({
-        ...data,
-        icon: imgSrc[data.icon]
-      }))}/>
+      <Wrapper>
+        <GlobalStyles />
+        <Navigation
+          totalFollowers={fetchData.socials.total}
+          sideName={fetchData.side_metadata.title}
+          isDarkMode={darkMode}
+          darkModeController={setDarkMode}/>
+        <TotalOfSide tileData={fetchData.socials.full.map(data => ({
+          ...data,
+          icon: imgSrc[data.icon]
+        }))}/>
+        <DayOverview dayTiles={fetchData.socials.today.map(data => ({
+          ...data,
+          icon: imgSrc[data.icon]
+        }))}/>
+      </Wrapper>
     </ThemeProvider>
   );
 }

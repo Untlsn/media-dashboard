@@ -1,17 +1,17 @@
 import React from 'react'
 import type TitleProps from "./props";
-import { SideName, Followers } from './style'
+import * as S from './style'
 
 const numberWithSpaces = (num: number, replacer: string = ' ') => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, replacer)
 
 const Title = ({ totalFollowers, sideName }: TitleProps) => {
   return (
-    <div>
-      <SideName>{ sideName }</SideName>
-      <Followers>
+    <S.Wrapper>
+      <S.SideName>{ sideName }</S.SideName>
+      <S.Followers>
         Total Followers: { numberWithSpaces(totalFollowers, ',') }
-      </Followers>
-    </div>
+      </S.Followers>
+    </S.Wrapper>
   )
 }
 

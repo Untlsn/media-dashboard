@@ -6,11 +6,20 @@ export const Prompt = styled(ThemedText)`
   font-size: 1.5em;
   font-weight: bolder;
 `
-export const Row = styled.div`
-  margin-top: 25px;
-  display: flex;
-  justify-content: space-evenly;
-`
+
 export const Wrapper = styled.div`
-  margin-bottom: 5vh;
+  margin-bottom: 10px;  
+`
+export const TileWrapper = styled.div`
+  display: grid;
+  gap: 25px;
+  
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
+  @media(max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `

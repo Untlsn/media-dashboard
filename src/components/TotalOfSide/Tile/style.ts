@@ -1,12 +1,27 @@
 import styled from "styled-components";
 import {ThemedText, Tile} from "@Style/Global";
 import { StyledTileProps } from "./props";
+import {Logo} from "@Style/components";
 
 
 
 export const StyledTile = styled(Tile)<StyledTileProps>`
-  height: 230px;
-  width: 280px;
+  max-width: 100%;
+  height: 25vh;
+  width: 35vh;
+
+  min-height: 150px;
+  min-width: 200px;
+
+  @media(max-width: 1000px) {
+    height: 10em;
+    width: 12em;
+    
+    font-size: 6vw;
+  }
+  
+  
+  margin: 25px 0;
   
   position: relative;
   padding-top: 4px;
@@ -56,3 +71,8 @@ export const PeopleName = styled(ThemedText)`
   font-size: .7em;
   font-weight: bolder;
 `
+export const LogoDown = styled(Logo)`
+  margin-top: .1em;
+  font-size: 1.3em;
+`
+

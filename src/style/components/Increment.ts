@@ -8,8 +8,8 @@ interface IncrementProps extends ThemedProps{
 class IncrementSup {
   static arrowPicker = (props: IncrementProps) => {
     switch (props.type) {
-      case "down": return 'border-top: 5px solid #ca5060;'
-      case "up": return 'border-bottom: 5px solid #54b99f;'
+      case "down": return 'border-top: .3em solid #ca5060;'
+      case "up": return 'border-bottom: .3em solid #54b99f;'
       case "none": return ''
     }
   }
@@ -30,14 +30,14 @@ const Increment = styled.div<IncrementProps>`
     content: '';
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    border-left: .3em solid transparent;
+    border-right: .3em solid transparent;
     
     ${props => IncrementSup.arrowPicker(props)}
     
     position: absolute;
-    top: 10px;
-    left: -15px;
+    top: .6em;
+    left: -.7em;
   }
 `
 

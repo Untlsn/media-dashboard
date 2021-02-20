@@ -8,7 +8,7 @@ const DayTile = ({ name, count, icon, percent_increments }: DayTileProps) => {
   return (
     <S.Wrapper>
       <S.Name>{ name }</S.Name>
-      <Logo icon={icon}/>
+      <Logo icon={ icon } scale={ 2 } />
       <S.Count>{ numberCutter(count) }</S.Count>
       <Increment type={incrementType(percent_increments)}>{ Math.abs(percent_increments) }%</Increment>
     </S.Wrapper>
