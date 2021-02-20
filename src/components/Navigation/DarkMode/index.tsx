@@ -1,7 +1,8 @@
 import React from 'react'
 import type DarkModeProps from "./props";
-import Switch, {Background, simpleGradientCreator as sgc} from "./Switch";
+import Switch, {Background} from "./Switch";
 import { Wrapper, Text } from './style'
+import Bgc from "@Libs/BackgroundCreator";
 
 const DarkMode = (props: DarkModeProps) => {
   const isDarkMode = props.isDarkMode ?? false
@@ -11,7 +12,7 @@ const DarkMode = (props: DarkModeProps) => {
       <Text>{ isDarkMode ? 'Light' : 'Dark' } Mode</Text>
       <Switch
         isOn={ isDarkMode }
-        background={Background.dual('#aeb3cb', sgc('#00aeff', '#00995d'))}
+        background={Background.dual('#aeb3cb', Bgc.dual('#00aeff', '#00995d').get())}
         onClick={ (_, isOn) => darkModeController(isOn) }
       />
     </Wrapper>

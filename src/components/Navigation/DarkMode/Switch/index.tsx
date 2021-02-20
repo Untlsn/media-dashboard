@@ -25,4 +25,4 @@ const Switch = (props: SwitchProps) => {
 
 export default Switch
 export type { default as SwitchProps } from "./props";
-export { default as Background, simpleGradientCreator } from './Background'
+export { default as Background } from './Background'

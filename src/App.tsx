@@ -3,6 +3,7 @@ import {ThemeProvider} from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "@Style/Global";
 import Navigation from "@Components/Navigation";
 import {fakeFetch, ApiInterface} from "@Libs/fakeFetch";
+import TotalOfSide from "@Components/TotalOfSide";
 
 const App = () => {
 
@@ -38,6 +39,7 @@ const App = () => {
         sideName={fetchData.side_metadata.title}
         isDarkMode={darkMode}
         darkModeController={setDarkMode}/>
+      <TotalOfSide tileData={fetchData.socials.full}/>
     </ThemeProvider>
   );
 }

@@ -19,8 +19,3 @@ class Background {
   }
 }
 
-export
-const simpleGradientCreator = (firstColor: string, secondColor: string) => `
-  linear-gradient(90deg, ${firstColor} 0%, ${secondColor} 100%)
-`
-
